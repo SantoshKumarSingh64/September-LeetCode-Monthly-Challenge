@@ -51,17 +51,17 @@ Each node's value is between [-10^5, 10^5].
 
 def getAllElements(self, root1: TreeNode, root2: TreeNode) -> List[int]:
         
-    def preorder(cur_node,lt):
+    def inorder(cur_node,lt):
             
         if cur_node:
-            preorder(cur_node.left,lt)
+            inorder(cur_node.left,lt)
             lt.append(cur_node.val)
-            preorder(cur_node.right,lt)
+            inorder(cur_node.right,lt)
                 
         return lt
                 
-    arr1 = preorder(root1,[])
-    arr2 = preorder(root2,[])
+    arr1 = inorder(root1,[])
+    arr2 = inorder(root2,[])
                 
     arr = []
         
